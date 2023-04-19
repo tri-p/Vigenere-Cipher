@@ -2,18 +2,20 @@
 # PROBLEM 3: THE VIGENERE CIPHER
 # Pseudocode
 # Take user's inputs for message and key. Convert them into uppercase letter. The input message or key should not have spaces
+print("\033[93m=" * 80, "\n")
 input_str = ""
 while input_str != 1:
-    message = input("Enter your Message: ").upper()
-    key = input("Enter your Key: ").upper()
+    message = input("\033[92mEnter your Message: \033[97m").upper()
+    key = input("\033[96mEnter your Key: \033[97m").upper()
     if " " in message or " " in key:
-        print("ERROR. There should be no spaces on both inputs. Try again.")
+        print("\033[91mERROR. There should be no spaces on both inputs. Try again.\n")
         continue
     else:
         break
 
-print("Message:", message)
-print("Key:", key)
+print("\n", "\033[93m=" * 80, "\n")
+print("\033[92mMessage:\033[97m", message)
+print("\033[96mKey:\033[97m", key, "\n")
 
 # Create a dictionary to map each alphabet to a number
 str_to_int = {}
@@ -64,11 +66,15 @@ for char in mod:
         ciphertext.append(int_to_str[char])
 
 # Print the key stream and the converted message and key
-print("Key Stream:", key)
-print("Converted Message:", " ".join(str(x) for x in converted_message))
-print("Converted Key:", " ".join(str(x) for x in converted_key))
+print("\033[93m=" * 80, "\n")
+print("\033[94mKey Stream:\033[97m", key)
+print("\033[92mConverted Message:\033[97m", " ".join(str(x) for x in converted_message))
+print("\033[96mConverted Key:\033[97m", " ".join(str(x) for x in converted_key))
 
 # Print the added and modular values and the final ciphertext
-print("Add:", " ".join(str(x) for x in add))
-print("Mod:", " ".join(str(x) for x in mod))
-print("Ciphertext:", " ".join(ciphertext))
+print("\n", "\033[93m=" * 80, "\n")
+print("\033[94mAdd:\033[97m", " ".join(str(x) for x in add))
+print("\033[94mMod:\033[97m", " ".join(str(x) for x in mod))
+print("\n", "\033[93m=" * 80, "\n")
+print("\033[1m\033[95mCiphertext:\x1B[3m\033[97m", " ".join(ciphertext))
+print("\n", "\033[93m=" * 80, "\n")
