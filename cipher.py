@@ -33,6 +33,13 @@ if len(message) > len(key):
 print("Key Stream:", key)
 
 # Convert each character in message to its corresponding number and append to a list
+converted_message = []
+for char in message:
+    if char in str_to_int:
+        converted_message.append(str_to_int[char])
+
+print("Converted Message:", converted_message)
+
 # Convert each character in key to its corresponding number and append to a list
 # Add each value in the converted message and key and append to a list
 # If the sum of the values exceed 25, reduce it to its modular value and append to a list
