@@ -26,6 +26,12 @@ for i, letter in enumerate("ABCDEFGHIJKLMNOPQRSTUVWXYZ"):
     int_to_str[i] = letter
 
 # Match the length of the key to the length of the message by repeating it
+if len(message) > len(key):
+    key *= (len(message) // len(key)) + 1
+    key = key[:len(message)]
+
+print("Key Stream:", key)
+
 # Convert each character in message to its corresponding number and append to a list
 # Convert each character in key to its corresponding number and append to a list
 # Add each value in the converted message and key and append to a list
