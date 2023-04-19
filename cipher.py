@@ -21,6 +21,10 @@ for i, letter in enumerate("ABCDEFGHIJKLMNOPQRSTUVWXYZ"):
     str_to_int[letter] = i
 
 # Create a dictionary to map each number to an alphabet
+int_to_str = {}
+for i, letter in enumerate("ABCDEFGHIJKLMNOPQRSTUVWXYZ"):
+    int_to_str[i] = letter
+
 # Match the length of the key to the length of the message by repeating it
 # Convert each character in message to its corresponding number and append to a list
 # Convert each character in key to its corresponding number and append to a list
