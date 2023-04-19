@@ -16,6 +16,10 @@ print("Message:", message)
 print("Key:", key)
 
 # Create a dictionary to map each alphabet to a number
+str_to_int = {}
+for i, letter in enumerate("ABCDEFGHIJKLMNOPQRSTUVWXYZ"):
+    str_to_int[letter] = i
+
 # Create a dictionary to map each number to an alphabet
 # Match the length of the key to the length of the message by repeating it
 # Convert each character in message to its corresponding number and append to a list
