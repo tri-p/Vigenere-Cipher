@@ -56,6 +56,17 @@ for i in range(len(converted_message)):
 print("Add:", add)
 
 # If the sum of the values exceed 25, reduce it to its modular value and append to a list
+mod = []
+for i in range(len(add)):
+    if add[i] % 26 != 0:
+        mod.append(add[i] % 26)
+    elif add[i] % 26 == 0:
+        mod.append(0)
+    else:
+        mod.append(add[i])
+
+print("Mod:", mod)
+
 # Convert each value in modular values to its corresponding alphabet and append to a list
 # Print the key stream and the converted message and key
 # Print the added and modular values and the final ciphertext
