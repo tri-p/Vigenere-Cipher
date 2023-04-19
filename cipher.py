@@ -30,15 +30,11 @@ if len(message) > len(key):
     key *= (len(message) // len(key)) + 1
     key = key[:len(message)]
 
-print("Key Stream:", key)
-
 # Convert each character in message to its corresponding number and append to a list
 converted_message = []
 for char in message:
     if char in str_to_int:
         converted_message.append(str_to_int[char])
-
-print("Converted Message:", converted_message)
 
 # Convert each character in key to its corresponding number and append to a list
 converted_key = []
@@ -46,14 +42,10 @@ for char in key:
     if char in str_to_int:
         converted_key.append(str_to_int[char])
 
-print("Converted Key:", converted_key)
-
 # Add each value in the converted message and key and append to a list
 add = []
 for i in range(len(converted_message)):
     add.append(converted_message[i] + converted_key[i])
-
-print("Add:", add)
 
 # If the sum of the values exceed 25, reduce it to its modular value and append to a list
 mod = []
@@ -65,15 +57,18 @@ for i in range(len(add)):
     else:
         mod.append(add[i])
 
-print("Mod:", mod)
-
 # Convert each value in modular values to its corresponding alphabet and append to a list
 ciphertext = []
 for char in mod:
     if char in int_to_str:
         ciphertext.append(int_to_str[char])
 
-print("Ciphertext:", ciphertext)
-
 # Print the key stream and the converted message and key
+print("Key Stream:", key)
+print("Converted Message:", " ".join(str(x) for x in converted_message))
+print("Converted Key:", " ".join(str(x) for x in converted_key))
+
 # Print the added and modular values and the final ciphertext
+print("Add:", " ".join(str(x) for x in add))
+print("Mod:", " ".join(str(x) for x in mod))
+print("Ciphertext:", " ".join(ciphertext))
