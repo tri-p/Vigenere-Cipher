@@ -41,6 +41,13 @@ for char in message:
 print("Converted Message:", converted_message)
 
 # Convert each character in key to its corresponding number and append to a list
+converted_key = []
+for char in key:
+    if char in str_to_int:
+        converted_key.append(str_to_int[char])
+
+print("Converted Key:", converted_key)
+
 # Add each value in the converted message and key and append to a list
 # If the sum of the values exceed 25, reduce it to its modular value and append to a list
 # Convert each value in modular values to its corresponding alphabet and append to a list
