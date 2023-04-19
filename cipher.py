@@ -68,5 +68,12 @@ for i in range(len(add)):
 print("Mod:", mod)
 
 # Convert each value in modular values to its corresponding alphabet and append to a list
+ciphertext = []
+for char in mod:
+    if char in int_to_str:
+        ciphertext.append(int_to_str[char])
+
+print("Ciphertext:", ciphertext)
+
 # Print the key stream and the converted message and key
 # Print the added and modular values and the final ciphertext
