@@ -49,6 +49,12 @@ for char in key:
 print("Converted Key:", converted_key)
 
 # Add each value in the converted message and key and append to a list
+add = []
+for i in range(len(converted_message)):
+    add.append(converted_message[i] + converted_key[i])
+
+print("Add:", add)
+
 # If the sum of the values exceed 25, reduce it to its modular value and append to a list
 # Convert each value in modular values to its corresponding alphabet and append to a list
 # Print the key stream and the converted message and key
